@@ -9,13 +9,13 @@
 ### Build
 
 ```sh
-docker build -t $(cat repo.txt):latest .
+docker build -t cruiseh/hello-world-golang-server:latest .
 ```
 
 ### Test
 
 ```sh
-docker run -it --rm -p 8888:8888 --name hello-world-server $(cat repo.txt)
+docker run -it --rm -p 8888:8888 --name hello-world-server cruiseh/hello-world-golang-server
 ```
 
 Navigate to http://localhost:8888
