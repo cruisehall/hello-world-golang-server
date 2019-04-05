@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-go
+  namespace: hw-go
 spec:
   ports:
   - name: http
