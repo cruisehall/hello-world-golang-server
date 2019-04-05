@@ -1,5 +1,9 @@
 # Hello World - GoLang Server
 
+## Prerequisites
+
+- [Release plugin: bump2version](https://github.com/c4urself/bump2version)
+
 ## Building
 
 ```sh
