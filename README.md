@@ -15,10 +15,10 @@ docker build -t cruiseh/hello-world-golang-server:latest -t cruiseh/hello-world-
 ```sh
 ./release.sh patch
 ```
-## Running locally
+## Running locally on port 8888
 
 ```sh
-docker run -it --rm --name hello-world-server cruisehall/hello-world-golang-server
+docker run -it --rm -p 8888:8888 --name hello-world-server cruisehall/hello-world-golang-server
 ```
 
 ## Helpful commands
