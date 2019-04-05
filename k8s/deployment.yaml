@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: hello-go-app
-        image: cruiseh/hello-world-golang-server:v0.0.6
+        image: cruiseh/hello-world-golang-server:v0.1.0
         ports:
         - containerPort: 8888
