@@ -1,9 +1,9 @@
 FROM golang:1.8-alpine
 
-WORKDIR /go/src/app
-COPY . .
+ADD . /go/src/app
+RUN go install app
 
-RUN go get -d -v ./...
-RUN go install -v ./...
-
-CMD ["app"]
+FROM alpine:latest
+COPY --from=0 /go/bin/app .
+ENV PORT 8888
+CMD ["./app"]
