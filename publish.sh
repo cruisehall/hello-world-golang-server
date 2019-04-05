@@ -1,6 +1,6 @@
 set -e
 DOCKER_REPO=$(cat repo.txt)
-RELEASE_VERSION=$(bump2version --dry-run --list patch | grep current_version | cut -d '=' -f2)
+RELEASE_VERSION=v$(bump2version --dry-run --list patch | grep current_version | cut -d '=' -f2)
 echo "===   Publishing version: [$RELEASE_VERSION]"
 git checkout $RELEASE_VERSION
 RELEASE_COMMIT=$(git log -1 --format=%h)
