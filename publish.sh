@@ -5,6 +5,6 @@ echo "===   Publishing version: [$RELEASE_VERSION]"
 git checkout $RELEASE_VERSION
 RELEASE_COMMIT=$(git log -1 --format=%h)
 echo "===   Checked out git tag: [$RELEASE_VERSION][$RELEASE_COMMIT]"
-docker build -t $DOCKER_REPO:latest -t $DOCKER_REPO:$RELEASE_COMMIT -t $DOCKER_REPO:$RELEASE_VERSION .
+docker build -t $DOCKER_REPO:latest -t $DOCKER_REPO:$RELEASE_VERSION .
 docker push $DOCKER_REPO
 git checkout master
