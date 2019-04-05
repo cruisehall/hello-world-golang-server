@@ -1,3 +1,4 @@
+set -e
 PART=$1
 RELEASE=$(bump2version --dry-run --list $PART | grep new_version | cut -d '=' -f2)
 bump2version $PART 
