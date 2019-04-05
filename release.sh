@@ -14,4 +14,4 @@ echo "===   Target Version: [$RELEASE_VERSION]"
 bump2version $PART
 echo "===   Successfully executed release"
 git push --tags
-echo "===   Pushed release to GitHub"
+echo "===   Pushed release tags to GitHub"
