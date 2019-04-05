@@ -7,18 +7,18 @@
 ## Building
 
 ```sh
-docker build -t cruiseh/hello-world-golang-server:latest -t cruiseh/hello-world-golang-server:$(git log -1 --format=%h) -t cruiseh/hello-world-golang-server:$(bump2version --dry-run --list patch | grep current_version | cut -d '=' -f2) .
+docker build -t $(cat repo.txt):latest .
 ```
 
-## Publish new release
+## Create new release
 
 ```sh
-./release.sh patch
+./release.sh (patch|minor|major)
 ```
-## Running locally on port 8888
+## Running the latest image locally on port 8888
 
 ```sh
-docker run -it --rm -p 8888:8888 --name hello-world-server cruisehall/hello-world-golang-server
+docker run -it --rm -p 8888:8888 --name hello-world-server $(cat repo.txt)
 ```
 
 ## Helpful commands
