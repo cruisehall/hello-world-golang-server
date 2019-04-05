@@ -3,9 +3,14 @@
 ## Building
 
 ```sh
-docker build -t cruisehall/hello-world-golang-server .
+docker build -t cruiseh/hello-world-golang-server:latest -t cruiseh/hello-world-golang-server:$(git log -1 --format=%h)  .
 ```
 
+## Publishing
+
+```sh
+docker push cruiseh/hello-world-golang-server
+```
 ## Running locally
 
 ```sh
