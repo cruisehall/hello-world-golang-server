@@ -7,13 +7,13 @@
 ## Building
 
 ```sh
-docker build -t cruiseh/hello-world-golang-server:latest -t cruiseh/hello-world-golang-server:$(git log -1 --format=%h)  .
+docker build -t cruiseh/hello-world-golang-server:latest -t cruiseh/hello-world-golang-server:$(git log -1 --format=%h) -t cruiseh/hello-world-golang-server:$(bump2version --dry-run --list patch | grep current_version | cut -d '=' -f2) .
 ```
 
 ## Publish new release
 
 ```sh
-docker push cruiseh/hello-world-golang-server
+./release.sh patch
 ```
 ## Running locally
 
