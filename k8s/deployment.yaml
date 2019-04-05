@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-golang-server
+  namespace: hw-go
+  labels:
+    app: hello-go
+spec:
+  selector:
+    matchLabels:
+      app: hello-go
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: hello-go
+        tier: web
+    spec:
+      containers:
+      - name: hello-go-app
+        image: cruiseh/hello-world-golang-server:latest
+        ports:
+        - containerPort: 8888
