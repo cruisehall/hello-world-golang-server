@@ -14,8 +14,20 @@ docker build -t cruiseh/hello-world-golang-server:latest .
 
 ### Test
 
+#### With Docker
+
 ```sh
 docker run -it --rm -p 8888:8888 --name hello-world-server cruiseh/hello-world-golang-server
+```
+
+Navigate to http://localhost:8888
+
+#### With Kubernetes
+
+After deploying `k8s/deployment.yaml` & `k8s/service.yaml` in the `hw-go` namespace, configure port forwarding to the `hello-go` service with the command:
+
+```sh
+kubectl port-forward svc/hello-go -n hw-go 8888:8888
 ```
 
 Navigate to http://localhost:8888
