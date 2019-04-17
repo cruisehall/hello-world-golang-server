@@ -9,8 +9,6 @@ if [ -z "$RELEASE_VERSION" ]
 then
     echo "===   ERROR: RELEASE_VERSION could not be set"
     exit 1
-else
-    echo "continue"
 fi
 echo "===   Bumping version: [$RELEASE_VERSION]"
 bump2version $PART
