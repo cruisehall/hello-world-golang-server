@@ -1,0 +1,8 @@
+spec:
+  template:    
+    spec:
+      containers:
+      - name: hello-go-app
+        env:
+        - name: ENVIRONMENT
+          value: STAGE
