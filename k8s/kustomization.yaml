@@ -1,0 +1,5 @@
+bases:
+- ./k8s/dev
+- ./k8s/stage
+- ./k8s/prod
+namePrefix: ue1-
