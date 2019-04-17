@@ -1,5 +1,10 @@
 set -e
-
+git diff-index HEAD | grep 0
+if [ $? -eq 0 ]
+then
+    echo "===   ERROR: Working tree is not clean"
+    exit 1
+fi
 PART=${1?Must set bump version part (patch|minor|major)}
 DOCKER_REPO=$(cat repo.txt)
 echo "===   Performing bump2version release: [$PART]"
