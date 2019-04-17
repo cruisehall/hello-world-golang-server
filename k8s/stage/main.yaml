@@ -32,7 +32,7 @@ spec:
       - env:
         - name: ENVIRONMENT
           value: STAGE
-        image: cruiseh/hello-world-golang-server:v0.4.4
+        image: cruiseh/hello-world-golang-server:v0.5.0
         name: hello-go-app
         ports:
         - containerPort: 8888
