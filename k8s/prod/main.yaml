@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prod-hello-go
+  name: hello-go
 spec:
   ports:
   - name: http
@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-go
-  name: prod-hello-go
+  name: hello-go
 spec:
   selector:
     matchLabels:
@@ -32,7 +32,7 @@ spec:
       - env:
         - name: ENVIRONMENT
           value: PROD
-        image: cruiseh/hello-world-golang-server:v0.4.0
+        image: cruiseh/hello-world-golang-server:v0.4.1
         name: hello-go-app
         ports:
         - containerPort: 8888
