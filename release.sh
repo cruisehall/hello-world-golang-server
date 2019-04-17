@@ -32,6 +32,7 @@ kustomize build ./k8s.d/prod | cat > k8s/prod/main.yaml
 
 git add .
 git commit -m  "Release: $CURRENT_VERSION -> $NEW_VERSION"
+git tag "$NEW_VERSION"
 
 echo "===   Successfully executed release"
 git push --tags
