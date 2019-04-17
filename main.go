@@ -9,8 +9,8 @@ import (
 
 func main() {
 	port := "80"
-	if fromEnv := os.Getenv("PORT"); fromEnv != "" {
-		port = fromEnv
+	if portFromEnv := os.Getenv("PORT"); portFromEnv != "" {
+		port = portFromEnv
 	}
 	// register hello function to handle all requests
 	server := http.NewServeMux()
@@ -24,9 +24,14 @@ func main() {
 
 // hello responds to the request with a plain-text "Hello, world" message.
 func hello(w http.ResponseWriter, r *http.Request) {
+	env := "BASE"
+	if envFromEnv := os.Getenv("ENVIRONMENT"); envFromEnv != "" {
+		env = envFromEnv
+	}
 	log.Printf("Serving request: %s", r.URL.Path)
 	host, _ := os.Hostname()
 	fmt.Fprintf(w, "Hello, Mars!\n")
 	fmt.Fprintf(w, "Version: 0.3.7\n")
 	fmt.Fprintf(w, "Hostname: %s\n", host)
+	fmt.Fprintf(w, "Environment: %s\n", env)
 }
