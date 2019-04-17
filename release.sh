@@ -18,7 +18,7 @@ then
     exit 1
 fi
 echo "===   Bumping version: [$NEW_VERSION]"
-bump2version --no-commit $PART
+bump2version --no-commit --no-tag $PART
 
 echo "===   Building Kubernetes Manifests"
 rm -rf k8s/
