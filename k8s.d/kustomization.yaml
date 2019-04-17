@@ -2,4 +2,3 @@ bases:
 - ./k8s.d/dev
 - ./k8s.d/stage
 - ./k8s.d/prod
-namePrefix: ue1-

@@ -2,4 +2,3 @@ bases:
 - ../base
 patches:
 - deployment.yaml
-namePrefix: dev-
