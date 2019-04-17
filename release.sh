@@ -1,6 +1,4 @@
 set -e
-git diff-index HEAD | grep 0
-rc=$?; if [[ $rc != 1 ]]; then exit 1; fi
 PART=${1?Must set bump version part (patch|minor|major)}
 DOCKER_REPO=$(cat repo.txt)
 echo "===   Performing bump2version release: [$PART]"
