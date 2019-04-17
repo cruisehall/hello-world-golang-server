@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - [Release plugin: bump2version](https://github.com/c4urself/bump2version)
+- [Kustomize](https://github.com/kubernetes-sigs/kustomize)
 
 ## Development
 
